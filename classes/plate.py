@@ -7,6 +7,7 @@ Author: Peng Zhou <peng.zhou137@gmail.com>
 
 from __future__ import division, print_function
 import numpy as np
+import matplotlib.pyplot as plt
 
 class Plate(object):
     """
@@ -43,7 +44,19 @@ class Plate(object):
         coord /= q_tot
         
         return coord
-    
+        
+    def draw_qsurf2D(self):
+        """
+        Draw the 2D (x,y) Qsurf distribution
+        """
+        
+        x = np.array(self.qsurf[:,0])
+        y = np.array(self.qsurf[:,1])
+        X, Y = np.meshgrid(x,y)
+        
+        q = np.array(self.qsurf[:,3])
+        plt.contour(X, Y, q)
+        plt.show()
     
 if __name__ == "__main__":
     print (Plate().coc)
