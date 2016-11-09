@@ -55,10 +55,10 @@ class Plate(object):
         X, Y = np.meshgrid(x,y)
         
         q = np.array(self.qsurf[:,3])
-        plt.contour(X, Y, q)
+        plt.scatter(X, Y, q)
         plt.show()
     
 if __name__ == "__main__":
-    print (Plate().coc)
+    print (Plate("..\\..\\qsurf_p.fld").coc)
     
         

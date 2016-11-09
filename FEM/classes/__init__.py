@@ -6,4 +6,4 @@ Author: Peng Zhou <peng.zhou137@gmail.com>
 """
 
 from .plate import Plate
-from .capacitor import Capacitor 
+from .capacitor import Capacitor

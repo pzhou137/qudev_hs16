@@ -7,7 +7,7 @@ Author: Peng Zhou <peng.zhou137@gmail.com>
 
 from __future__ import division, print_function
 import numpy as np
-from plate import Plate
+from .plate import Plate
 
 
 class Capacitor(object):
@@ -26,10 +26,9 @@ class Capacitor(object):
         effective distance between center of charge (COC) of two plates
         """
         coc1 = self.plate1.coc
+        print(coc1)
         coc2 = self.plate2.coc
-        np.linalg.norm(coc1 - coc2)
-        
-if __name__ == "__main__":
-    print(Capacitor().d_eff)
-        
+        print(coc2)
+        return np.linalg.norm(coc1 - coc2)
+
         
